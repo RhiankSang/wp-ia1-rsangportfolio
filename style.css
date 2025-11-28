@@ -1,0 +1,366 @@
+/* -------------------------------
+   CSS Variables & Global Styles
+   ------------------------------- */
+:root {
+    --bg-color: #0b1120;
+    --card-bg: #111827;
+    --accent: #22c55e;
+    --accent-soft: #4ade80;
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --border-subtle: rgba(148, 163, 184, 0.35);
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    --radius-lg: 1.25rem;
+    --shadow-soft: 0 16px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Reset-ish */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background: radial-gradient(circle at top, #1f2937 0, var(--bg-color) 55%);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+/* Layout containers */
+main {
+    max-width: 1100px;
+    margin: 0 auto 4rem auto;
+}
+
+/* Generic card style – padding, margin, border for all sections */
+section.card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 1.5rem;
+    margin: 1.75rem 0;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-soft);
+    animation: fadeInUp 0.7s ease both;
+}
+
+/* Header & Nav */
+.site-header {
+    max-width: 1100px;
+    margin: 0 auto 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: rgba(15, 23, 42, 0.95);
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    position: sticky;
+    top: 0.75rem;
+    z-index: 20;
+    backdrop-filter: blur(18px);
+}
+
+/* Logo */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.logo-mark {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    color: #022c22;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.logo-text {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+/* Navigation */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+/* Pseudo-classes */
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    background-color: rgba(34, 197, 94, 0.18);
+    color: var(--text-main);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.main-nav a:focus-visible {
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin-top: 0.75rem;
+}
+
+p {
+    margin-bottom: 0.75rem;
+}
+
+/* Lists */
+ul {
+    margin-left: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+ol {
+    margin-left: 1.25rem;
+}
+
+/* Special text */
+.tagline {
+    font-size: 1.05rem;
+    color: var(--accent-soft);
+    margin-bottom: 0.75rem;
+}
+
+.muted {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.small-text {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* About section layout */
+.layout-split {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.profile-aside {
+    text-align: center;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 999px;
+    object-fit: cover;
+    border: 3px solid var(--accent-soft);
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image hover (transition) */
+.profile-aside a:hover .profile-img,
+.profile-aside a:focus-visible .profile-img {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Demographic list */
+.demographic-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+/* Two-column helper */
+.two-column {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Timeline style */
+.timeline {
+    list-style: none;
+    margin-left: 0;
+}
+
+.timeline > li {
+    margin-bottom: 0.9rem;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--accent);
+}
+
+/* Table */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 320px;
+    font-size: 0.95rem;
+}
+
+th,
+td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+th {
+    background-color: rgba(15, 23, 42, 0.95);
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(17, 24, 39, 0.9);
+}
+
+/* Layout diagrams */
+.layout-diagram {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 0.75rem;
+    background-color: #020617;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    border: 1px dashed rgba(148, 163, 184, 0.7);
+    overflow-x: auto;
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* Skip link */
+.skip-link {
+    text-align: right;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+}
+
+.skip-link a {
+    color: var(--accent-soft);
+}
+
+/* Back to top */
+.back-to-top {
+    color: var(--accent-soft);
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    background-color: var(--accent-soft);
+    color: #022c22;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+/* Cards hover – subtle animation */
+section.card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+section.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-soft);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------------------
+   Responsive Design
+   ------------------------------- */
+
+/* Mobile / small screens (min 600px) */
+@media (min-width: 600px) {
+    body {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .layout-split {
+        grid-template-columns: 3fr 2fr;
+        align-items: center;
+    }
+
+    .two-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-header {
+        padding-inline: 1.5rem;
+    }
+}
+
+/* Desktop screens (min 950px) */
+@media (min-width: 950px) {
+    main {
+        margin-top: 1.5rem;
+    }
+
+    .site-header {
+        top: 1rem;
+    }
+
+    section.card {
+        padding: 2rem 2.25rem;
+    }
+
+    .main-nav a {
+        font-size: 0.95rem;
+    }
+}
