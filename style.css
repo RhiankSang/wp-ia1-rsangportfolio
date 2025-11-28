@@ -343,7 +343,95 @@ section.card:hover {
 
     .site-header {
         padding-inline: 1.5rem;
-    }
+    }body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1621;
+    color: #e6e6e6;
+}
+
+.site-header {
+    background: #102a43;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-mark {
+    background: #14b8a6;
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #d6e8ff;
+    font-weight: bold;
+}
+
+.card {
+    background: #13293d;
+    margin: 40px auto;
+    padding: 35px;
+    width: 85%;
+    border-radius: 15px;
+    border: 1px solid #14b8a6;
+}
+
+.layout-split {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.profile-img {
+    width: 260px;
+    border-radius: 15px;
+}
+
+.two-column {
+    display: flex;
+    gap: 40px;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline li {
+    margin-bottom: 15px;
+}
+
+.site-footer {
+    background: #102a43;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+a {
+    color: #7bc8ff;
+}
+
+a:hover {
+    color: #14b8a6;
+}
+
+.back-to-top {
+    display: inline-block;
+    margin-top: 15px;
+}
+
 }
 
 /* Desktop screens (min 950px) */
